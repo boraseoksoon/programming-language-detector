@@ -1,0 +1,23 @@
+{
+  "name": "programming-language-detector",
+  "version": "1.0.0",
+  "description": "Programming Language Detector written in Clojurescript and Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boraseoksoon/programming-language-detector.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boraseoksoon/programming-language-detector/issues"
+  },
+  "homepage": "https://github.com/boraseoksoon/programming-language-detector#readme",
+  "dependencies": {
+    "shadow-cljs": "^2.11.4"
+  }
+}
