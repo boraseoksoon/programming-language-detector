@@ -2247,6 +2247,7 @@ SHADOW_IMPORT("goog.uri.utils.js");
 SHADOW_IMPORT("goog.uri.uri.js");
 SHADOW_IMPORT("goog.string.stringbuffer.js");
 SHADOW_IMPORT("cljs.core.js");
+SHADOW_IMPORT("shadow.js.shim.module$child_process.js");
 SHADOW_IMPORT("core.fn.js");
 SHADOW_IMPORT("shadow.umd_helper.js");
 SHADOW_IMPORT("shadow.module.main.append.js");

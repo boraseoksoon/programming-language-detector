@@ -8,5 +8,4 @@
  :builds
  {:core {:target :node-library
             :output-to "dist/index.js"
-						:exports {:add core.fn/add
-                      :subtract core.fn/subtract}}}}
+						:exports {:detect core.fn/detect}}}}

@@ -2,8 +2,10 @@
 
 ## programming-language-detector
 
-programming-language-detector, written in ClojureScript, and a little Javascript, is to detect which programming langauge given a source code string is written in.
+programming-language-detector, written in Clojure and ClojureScript, and a little Javascript,is to detect which programming langauge given a source code string is written in.
 (not a file or project unit but for when given a string.)
+
+It is going to rely heavily on [guesslang](https://github.com/yoeo/guesslang), which is the nice enough software that does the job really well.
 
 While it is born and built to help [autocomplete-me](http://autocomplete-me.com), it is also aiming to support [node](http://nodejs.org), and modern web browsers and CLI via [home brew](https://brew.sh) as independently as it can.
 

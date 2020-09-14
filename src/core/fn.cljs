@@ -1,20 +1,36 @@
-(ns core.fn)
+(ns core.fn
+  (:require ["child_process" :as process]))
 
-(defn add [x y]
-  (+ x y))
+(defn detect [src]
+	(js/Promise. (fn [resolve] 
+		(let [prefix "Programming language: "]
+			(let [cmd (str "echo " src " | guesslang")]
+				(defn complete [err stdout stderr]
+					(let [language (.replace (.replace stdout "\n" "") prefix "")]
+						(when (not err) 
+							(resolve language))))
+				(.exec process cmd complete))))))		
 
-(defn subtract [x y]
-	(- x y))
+; (defn detect [src cb]
+;   (let [prefix "Programming language: "]
+;     (let [cmd (str "echo " src " | guesslang")]
+;       (defn complete [err stdout stderr]
+;         (let [language (.replace (.replace stdout "\n" "") prefix "")]
+; 					(when (not err) 
+; 						(cb language))))
+;       (.exec process cmd complete))))
 
-; (ns core.fn
-; 	(:require ["code-trimmer" :as trimmer])
-; 	(:require ["moment" :as moment]))
 
-; (defn add [x y]
-;   (+ x y))
+; (js/Promise. 
+; \t(fn [res rej] (res )))
 
-; (defn subtract [x y]
-; 	(- x y))
+; const { exec } = require('child_process')
+; exec(`echo ${code} | guesslang`, (err, stdout, stderr) => {
+; \tif (err) {
+; \t\tconsole.error("node couldn't execute the command : ", err);
+; \t\treturn;
+; \t}
+; \tconsole.log(`${stdout}`);
+; })
 
-; (defn indent [src] 
-; 	((. trimmer -trim) src))
+; (.log js/console (.getOwnPropertyNames js/Object process))
