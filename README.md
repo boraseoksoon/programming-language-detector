@@ -11,20 +11,22 @@ While it is born and built to help [autocomplete-me](http://autocomplete-me.com)
 
 [![NPM Version][npm-image]][npm-url]
 
-```clojure
-const languageDetector = require("programming-language-detector")
+```javascript
+const languageDetector = require("./dist/index")
+const code = `'
+abstract class Tree
+	case class Sum(l: Tree, r: Tree) extends Tree
+	case class Var(n: String) extends Tree
+	case class Const(v: Int) extends Tree
+'`
 
-const code = "
-(loop [x 10]
-  (when (< x 10)
-    (prn x)
-    (recur (dec x))))
-"
-const res = languageDetector.detect(code)
+const main = async () => {
+	const lang = await languageDetector.detect(code)
+	console.log(lang);
+}
 
-console.log(res)
-// => 'Clojure'
-
+main()
+// => 'Scala'
 ```
 
 ## Installation for Node.js
