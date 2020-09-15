@@ -1,10 +1,12 @@
 {
   "name": "programming-language-detector",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Programming Language Detector written in Clojurescript and Javascript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest ./*.test.js",
+		"preinstall": "pip3 install guesslang", 
+		"postuninstall": "pip3 uninstall guesslang" 
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,10 @@
   },
   "homepage": "https://github.com/boraseoksoon/programming-language-detector#readme",
   "dependencies": {
-    "child_process": "^1.0.2",
+    "child_process": "^1.0.2"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
     "shadow-cljs": "^2.11.4"
   }
 }

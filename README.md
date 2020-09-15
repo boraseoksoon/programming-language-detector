@@ -12,7 +12,7 @@ While it is born and built to help [autocomplete-me](http://autocomplete-me.com)
 [![NPM Version][npm-image]][npm-url]
 
 ```javascript
-const languageDetector = require("./dist/index")
+const languageDetector = require("programming-language-detector")
 const code = `'
 abstract class Tree
 	case class Sum(l: Tree, r: Tree) extends Tree

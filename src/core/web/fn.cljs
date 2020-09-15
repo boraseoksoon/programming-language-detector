@@ -1,4 +1,4 @@
-(ns core.fn
+(ns core.web.fn
   (:require ["child_process" :as process]))
 
 (def err-msg
@@ -19,17 +19,3 @@
 						:else
 							(reject (str err-msg stderr))))	
 				(.exec process cmd complete))))))		
-
-; (defn detect [src cb]
-;   (let [prefix "Programming language: "]
-;     (let [cmd (str "echo " src " | guesslang")]
-;       (defn complete [err stdout stderr]
-;         (let [language (.replace (.replace stdout "\n" "") prefix "")]
-; 					(when (not err) 
-; 						(cb language))))
-;       (.exec process cmd complete))))
-
-; (js/Promise. 
-; \t(fn [res rej] (res )))
-
-; (.log js/console (.getOwnPropertyNames js/Object process))

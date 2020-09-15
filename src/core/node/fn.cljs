@@ -1,4 +1,4 @@
-(ns core.fn
+(ns core.node.fn
   (:require ["child_process" :as process]))
 
 (def err-msg
