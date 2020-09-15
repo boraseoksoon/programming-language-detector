@@ -1,18 +1,15 @@
-## WARNING: IT DOES NOT WORK NOW. IT IS IN THE PROGRESS OF BEING BUILT NOW.
-
 ## programming-language-detector
 
-programming-language-detector, written in Clojure and ClojureScript, and a little Javascript,is to detect which programming langauge given a source code string is written in.
+programming-language-detector is a thin wrapper around [guesslang](https://github.com/yoeo/guesslang), as built to be able to detect which programming langauge it is written in when given a chunk of source code string on javascript platform such as Node.js.
 (not a file or project unit but for when given a string.)
 
-It is going to rely heavily on [guesslang](https://github.com/yoeo/guesslang), which is the nice enough software that does the job really well.
-
-While it is born and built to help [autocomplete-me](http://autocomplete-me.com), it is also aiming to support [node](http://nodejs.org), and modern web browsers and CLI via [home brew](https://brew.sh) as independently as it can.
+While it is built to be used for [autocomplete-me](http://autocomplete-me.com), it is also aiming to support [node](http://nodejs.org), and modern web browsers CDN supports and CLI via [home brew](https://brew.sh) as independently as possible alon with Javascript.
 
 [![NPM Version][npm-image]][npm-url]
 
 ```javascript
-const languageDetector = require("programming-language-detector")
+const { languageDetector } = require("programming-language-detector")
+
 const code = `'
 abstract class Tree
 	case class Sum(l: Tree, r: Tree) extends Tree
@@ -21,12 +18,23 @@ abstract class Tree
 '`
 
 const main = async () => {
-	const lang = await languageDetector.detect(code)
-	console.log(lang);
+	try {
+		const lang = await languageDetector.detect(code)
+		console.log(lang);
+	} catch (err) {
+		console.log(err);
+	}
 }
 
 main()
 // => 'Scala'
+```
+
+## Warning
+It only works now for node.js.
+If there is problem regarding guesslang, try 
+```
+pip3 install guesslang
 ```
 
 ## Installation for Node.js
@@ -59,6 +67,9 @@ TO BE INTRODUCED
 
 It should do one thing well
 It should get as simple to use as possible
+
+## Credits
+It is a thin wrapper around [guesslang](https://github.com/yoeo/guesslang) for me to be able to use on Node.js platform, MIT license software, which is the nice enough software and does the job really well.
 
 ## Contributing
 
